@@ -1,0 +1,44 @@
+body {
+	background-color: #f0f0f0;
+}
+
+.container {
+	width: 650px;
+	margin: auto;  
+	padding: 0px 30px 0px 30px;
+	border: 1px solid #c8c8c8;
+	background-color: white;
+	border-radius: 10px;
+}
+
+.my_photo {
+	margin: 15px 0px 0px 65px;
+	border: 1px solid white;
+	border-radius: 8px;
+	height: 240px;
+	float: right;
+}
+
+.education {
+	margin: 0px 15px 0px 15px;
+}
+
+.contact {
+	margin: 0px 15px 0px 15px;
+}
+
+.networks {
+	margin: 0px 15px 0px 15px;
+}
+
+.skill {
+	margin: 0px 10px 0px 10px;
+}
+
+* {
+	font-family: tahoma;
+}
+
+.gray {
+	color: #969696;
+}
