@@ -26,7 +26,6 @@ $employee3 = array(
 
 $employees = array($employee1, $employee2, $employee3);
 
-
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +36,7 @@ $employees = array($employee1, $employee2, $employee3);
 </head>
 <body>
 
-<table border="1">
+<table border="1" cellspacing="0">
    <tr>
       <th>Name</th>
       <th>Surname</th>
@@ -45,23 +44,19 @@ $employees = array($employee1, $employee2, $employee3);
       <th>Weight</th>
       <th>Can swim</th>
    </tr>
+   
+   <?php foreach ($employees as $e) : ?>
 
    <tr>   
-      <th><?= $employees[0]["name"] ?></th>   
-      <th><?= $employees[0]["surname"] ?></th>   
-      <th><?= $employees[0]["age"] ?></th>   
-      <th><?= $employees[0]["weight"] ?></th>   
-      <th><?= $employees[0]["can_swim"] ? "Yes" : "Not" ?></th>
-   </tr>
-
-   <tr>   
-      <th><?= $employees[1]["name"] ?></th>   
-      <th><?= $employees[1]["surname"] ?></th>   
-      <th><?= $employees[1]["age"] ?></th>   
-      <th><?= $employees[1]["weight"] ?></th>   
-      <th><?= $employees[1]["can_swim"] ? "Yes" : "Not" ?></th> 
+      <td><?= $e["name"] ?></td>   
+      <td><?= $e["surname"] ?></td>   
+      <td><?= $e["age"] ?></td>   
+      <td><?= $e["weight"] ?></td>   
+      <td><?= $e["can_swim"] ? "Yes" : "Not" ?></td>
    </tr>
    
+   <?php endforeach; ?>
+
 </table>
 
 </body>
