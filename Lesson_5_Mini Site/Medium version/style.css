@@ -1,0 +1,18 @@
+.book-item {
+	width: 130px;
+	height: 300px;
+	float: left;
+	border: 1px solid black;
+	margin: 0 0 5px 5px;
+	padding: 10px;
+
+}
+
+.book-item div {
+	height: 50px;
+	font-weight: bold;
+}
+
+.date {
+	clear: both;
+}
