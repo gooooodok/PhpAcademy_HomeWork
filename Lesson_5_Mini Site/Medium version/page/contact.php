@@ -1,5 +1,7 @@
 <?php 
 
+require 'model/contact.php';
+
 if (isRequestPost()) {
 
     if (isFormValid()) {
@@ -13,7 +15,8 @@ if (isRequestPost()) {
     
     setFlash('Fill the fields');
 }
-$messages = loadMessages();
+
+$messages = findAllMessages();
 
 
 ?>

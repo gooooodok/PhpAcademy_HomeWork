@@ -48,12 +48,6 @@ function getFlash()
     return $message;
 }
 
-function createMessage($username, $email, $message)
-{
-    $id = uniqid();
-    return compact('username', 'email', 'message');
-}
-
 function redirect($to)
 {
     header("Location: {$to}");
@@ -79,30 +73,6 @@ function isFormValid()
 {
     return trim(requestPost('username')) != '' && trim(requestPost('email')) != '' && trim(requestPost('message')) != '';
 }
-
-function saveMessage(array $message)
-{
-    $s = serialize($message);
-    file_put_contents(DATA_FILE, $s . PHP_EOL, FILE_APPEND);
-}
-
-function loadMessages()
-{
-    $messages = file_get_contents(DATA_FILE);
-    $messages = explode(PHP_EOL, $messages);
-    
-    foreach ($messages as $key => $message) {
-        if ($message) {
-            $messages[$key] = unserialize($message);
-            continue;
-        }
-        
-        unset($messages[$key]);
-    }
-    
-    return $messages;
-}
-
 
 
 ?>
