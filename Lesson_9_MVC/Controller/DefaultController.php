@@ -1,14 +1,11 @@
 <?php
-
 namespace Controller;
-
 use Library\Controller;
 use Model\Form\FeedbackForm;
 use Model\FeedbackRepository;
+use Model\Entity\Feedback;
 use Library\Request;
 use Library\Session;
-
-
 class DefaultController extends Controller
 {
     public function indexAction()
@@ -18,7 +15,7 @@ class DefaultController extends Controller
     
     public function feedbackAction(Request $request)
     {
-    $form = new FeedbackForm($request);
+        $form = new FeedbackForm($request);
         
         if ($request->isPost()) {
             if ($form->isValid()) {
