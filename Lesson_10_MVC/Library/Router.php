@@ -52,20 +52,24 @@ class Router
             }
         }
         
-        if (!$this->currentRoute) {
+       if (!$this->currentRoute) {
             throw new \Exception('Page not found', 404);
-        }
+        } 
     }
     
     public function getUri($routeName, array $params = array())
-    {
-        
+    {   
        // todo
     }
 
-	public function redirect($to)
-	{
-		header("Location: {$to}");
-		die;
-	}
+    public function redirectToRoute($routeName, array $params = array())
+    {
+        $this->redirect($this->getUri($routeName, $params));
+    }
+
+        public function redirect($to)
+    {
+        header("Location: {$to}");
+        die;
+    }
 }

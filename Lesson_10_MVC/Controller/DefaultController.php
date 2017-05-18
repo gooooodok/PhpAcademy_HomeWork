@@ -19,13 +19,13 @@ class DefaultController extends Controller
         
         if ($request->isPost()) {
             if ($form->isValid()) {
-                $repository = $this->get('repository')->getRepository('Feedback');
+                $repository = $this->get('repository')->getRepository('feedback_page');
                 $feedback = (new Feedback())->setFromForm($form);
                 
                 $repository->save($feedback);
                 
                 Session::setFlash('Feedback sent');
-                $this->get('router')->redirect('/index.php?route=default/feedback');
+                $this->get('router')->redirectToRoute('/feedback');
             }
             
             Session::setFlash('Fill the fields properly');
