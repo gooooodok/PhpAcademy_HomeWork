@@ -1,0 +1,14 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+.book-item {
+  min-height:550px;
+}
+
+.books-list-table td {
+  text-align: left;
+}

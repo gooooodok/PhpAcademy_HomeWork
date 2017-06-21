@@ -1,0 +1,40 @@
+<h1>Feedback</h1>
+
+<div id='message'></div>
+
+<form method='post' id='feedback-form'>
+    <input class="form-control" type="text" name="author" value="<?=$form->author ?>"/><br>
+    <input class="form-control"  type="email" name="email" value="<?=$form->email ?>"/><br>
+    <textarea class="form-control"  name="message"><?=$form->message ?></textarea><br>
+    <button class="btn btn-primary">Go</button>
+</form>
+
+<script>
+
+	$(document).ready(function(){
+
+		var $form = $('#feedback-form');
+		var $messageBox = $('#message');
+
+		$form.on('submit', function(event) {
+
+			$form.find('input, textarea').each(function(index, element) {
+				console.log(element);
+				if (element.value == ''){
+					var $b = $('<b>Fill the fiellds</b>');
+
+					$b.click(function() {
+						$(this).fadeOut();
+					});
+
+					$messageBox.html($b);
+
+					event.preventDefault();
+
+					return false;
+				}
+			});			
+		})
+	});
+
+</script>
